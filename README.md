@@ -14,12 +14,12 @@ git clone https://github.com/cstrahan-blueshift/vscode_rust_rebuild_repro.git to
 # create a symlink
 ln -s $PWD/topdir/vscode_rust_rebuild_repro vscode_rust_rebuild_repro_link
 
+# open vscode through the symlink
+code vscode_rust_rebuild_repro_link
+
 # build the project
 cd vscode_rust_rebuild_repro_link
 CARGO_LOG=cargo::core::compiler::fingerprint=info cargo build -p demo_bin
-
-# open vscode through the symlink
-code vscode_rust_rebuild_repro_link
 ```
 
 now that VSCode is open, select `crates/src/main.rs` in the Exploror widget,
